@@ -17,21 +17,22 @@ header {
   padding: 1rem 0;
 }
 
+/* ensure nav fills the header */
 nav {
-  max-width: 900px;
-  margin: auto;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
+  align-items: center; /* center vertically */
+  padding: 0 2rem;     /* horizontal spacing */
 }
 
+/* push the list to the right */
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end; 
   gap: 1.5rem;
+  margin-left: auto; /* <-- pushes ul to the right */
 }
+
 
 nav a {
   color: #fff;
