@@ -44,6 +44,92 @@ nav a {
   min-height: 90vh;    /* makes each section almost full screen height */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+/* HERO (Landing) Section */
+#hero {
+  height: 100vh; /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+}
+
+.hero-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Icon links below your name */
+.hero-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-links img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  filter: invert(1);
+}
+
+.hero-links img:hover {
+  transform: scale(1.2);
+}
+
+/* NAVBAR */
+header {
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 4rem 1rem;
+  min-height: 90vh;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+
 
 h2 {
   margin-bottom: 1rem;
