@@ -17,27 +17,45 @@ header {
   padding: 1rem 0;
 }
 
-/* ensure nav fills the header */
-nav {
-  width: 100%;
-  display: flex;
-  align-items: center; /* center vertically */
-  padding: 0 2rem;     /* horizontal spacing */
+/* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;              /* full screen width */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
 }
 
-/* push the list to the right */
+nav {
+  width: 100%;              /* full width nav */
+  display: flex;
+  justify-content: flex-end; /* move items to the right */
+  align-items: center;
+  padding: 1rem 3rem;        /* add space around links */
+  box-sizing: border-box;    /* ensures padding doesn't shrink width */
+}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin-left: auto; /* <-- pushes ul to the right */
+  margin: 0;
+  padding: 0;
 }
-
 
 nav a {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
+
+nav a:hover {
+  color: #ffd700;
+}
+
 
 .section {
   max-width: 900px;
