@@ -39,9 +39,11 @@ nav a {
 
 .section {
   max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 6rem auto;   /* increases space around sections */
+  padding: 4rem 1rem;  /* adds internal space */
+  min-height: 90vh;    /* makes each section almost full screen height */
 }
+
 
 h2 {
   margin-bottom: 1rem;
