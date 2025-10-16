@@ -4,12 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reneva | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Optional: artistic Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Hero Section (Landing Page) -->
+  <section id="hero">
+    <h1 class="hero-name">Reneva Newman</h1>
+    <div class="hero-links">
+      <a href="#about" title="About"><img src="images/about-icon.png" alt="About"></a>
+      <a href="#projects" title="Projects"><img src="images/projects-icon.png" alt="Projects"></a>
+      <a href="#contact" title="Contact"><img src="images/contact-icon.png" alt="Contact"></a>
+    </div>
+  </section>
+
+  <!-- Navigation Bar (optional sticky) -->
   <header>
     <nav>
-      <h1>Reneva Newman</h1>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -18,31 +31,30 @@
     </nav>
   </header>
 
+  <!-- About Section -->
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Hello there! I’m Reneva, a junior developer passionate about building clean, functional, and accessible web experiences.
-         I love learning new technologies and creating projects that solve real-world problems.</p>
+    <p>Hello! I’m Reneva, a junior developer passionate about building clean, functional, and accessible web experiences.</p>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <h3>Kanban Productivity App</h3>
-        <p>A digital tool that helps users organise their daily tasks by priority</p>
-        <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+        <h3>Project One</h3>
+        <p>Brief description of what this project does and what you learned.</p>
       </div>
       <div class="project-card">
-        <h3>Podcast App</h3>
-        <p>An app that allows users to dynamically listen to their favorite podcasts</p>
-        <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+        <h3>Project Two</h3>
+        <p>Brief description of this project and its key features.</p>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Let’s connect! You can reach me via email or find me online:</p>
     <ul class="contact-list">
       <li><a href="mailto:renevanewman7@gmail.com">renevanewman7@gmail.com</a></li>
       <li><a href="https://github.com/Reneva-dev" target="_blank">GitHub</a></li>
