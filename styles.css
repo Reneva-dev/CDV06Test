@@ -70,13 +70,15 @@ nav a:hover {
 
 .hero-name {
   font-family: 'Raleway', sans-serif;
-  font-size: 4.5rem;
+  font-size: 7rem;           /* increased from 4.5rem */
   font-weight: 900;
-  letter-spacing: 3px;
-  margin-bottom: 3rem;
+  letter-spacing: 4px;
+  margin-bottom: 3.5rem;
   text-transform: uppercase;
   color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* adds subtle glow for readability */
 }
+
 
 
 /* HERO ICON LINKS */
