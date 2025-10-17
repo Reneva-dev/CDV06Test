@@ -209,24 +209,60 @@ h2 {
 }
 
 /* CONTACT SECTION */
-.contact-list {
-  list-style: none;
-  padding: 0;
+/* CONTACT SECTION */
+.contact-section {
   text-align: center;
 }
 
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .contact-list li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .contact-list a {
   color: #0077cc;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 .contact-list a:hover {
+  color: #005fa3;
   text-decoration: underline;
 }
+
 
 /* FOOTER */
 footer {
