@@ -300,3 +300,18 @@ footer {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
+
+/*MEDIA QUERIES */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 4rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 3rem;
+  }
+}
+
