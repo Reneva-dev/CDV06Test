@@ -354,6 +354,16 @@ footer {
   }
 }
 
+/* TIGHTER SPACING BETWEEN ABOUT & PROJECTS ON LARGER SCREENS */
+@media (min-width: 769px) {
+  #about.section {
+    margin-top: 3rem;        /* smaller gap above */
+    margin-bottom: 0rem;     /* remove excess gap below */
+    padding-bottom: 2rem;    /* gentle breathing room */
+  }
+}
+
+
 /* === GLOBAL ALIGNMENT FIXES === */
 
 /* Center everything globally */
