@@ -14,6 +14,7 @@ body {
   line-height: 1.6;
   color: #222;
   background: #fafafa;
+  text-align: center;
 }
 
 /* NAVBAR */
@@ -47,11 +48,17 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   position: relative;
 }
 
-/* Tooltip styling for icon-only mode */
+/* Subtle hover glow */
+nav a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Tooltip styling (for icon-only mode) */
 nav a::after {
   content: attr(data-label);
   position: absolute;
@@ -71,11 +78,6 @@ nav a::after {
 
 nav a:hover::after {
   opacity: 1;
-}
-
-/* Hover color */
-nav a:hover {
-  color: #ffd700;
 }
 
 /* HERO SECTION */
@@ -119,13 +121,13 @@ nav a:hover {
 
 .hero-links a:hover {
   transform: scale(1.25);
-  text-shadow: 0 0 15px currentColor;
+  text-shadow: 0 0 20px currentColor;
 }
 
 /* SECTIONS */
 .section {
   max-width: 900px;
-  margin: 6rem auto;
+  margin: 8rem auto;
   padding: 4rem 1rem;
   min-height: 90vh;
   text-align: center;
@@ -261,8 +263,9 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* RESPONSIVENESS */
-/* --- Responsive Navbar for Tablets & Phones --- */
+/* --- RESPONSIVENESS --- */
+
+/* Tablets & Phones */
 @media (max-width: 768px) {
   nav {
     justify-content: center;
@@ -274,39 +277,39 @@ footer {
   }
 
   nav a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    font-size: 1.6rem; /* icon size */
+    font-size: 1.8rem;
   }
 
-  nav a i {
-    font-size: 1.8rem; /* make icon prominent */
-    margin-bottom: 0.2rem;
-  }
-
-  /* Hide text */
+  /* Hide text, show icons */
   nav a span {
     display: none;
   }
+
+  nav a i {
+    display: inline-block;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  nav a:hover i {
+    transform: scale(1.2);
+    color: #ffd700;
+  }
 }
 
-/* Even smaller phones */
+/* Small Phones */
 @media (max-width: 480px) {
   nav ul {
     gap: 1rem;
   }
 
   nav a i {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
-}
 
-
-@media (max-width: 480px) {
   .hero-name {
     font-size: 3.5rem;
     letter-spacing: 2px;
   }
 }
+
