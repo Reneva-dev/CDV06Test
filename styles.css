@@ -313,3 +313,51 @@ footer {
   }
 }
 
+/* === GLOBAL ALIGNMENT FIXES === */
+
+/* Center everything globally */
+body {
+  overflow-x: hidden; /* prevents horizontal scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ensure sections are centered properly */
+.section {
+  width: 100%;
+  max-width: 900px;
+  margin: 6rem auto;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* Hero Section fix */
+#hero {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contact Section fix */
+.contact-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Prevent any child elements from overflowing */
+* {
+  max-width: 100%;
+}
+
