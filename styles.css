@@ -262,33 +262,76 @@ footer {
 }
 
 /* RESPONSIVENESS */
+/* --- RESPONSIVE NAVBAR --- */
 @media (max-width: 768px) {
-  nav ul {
-    gap: 1.5rem;
+  nav {
+    justify-content: center;
+    padding: 0.8rem 1rem;
   }
 
-  /* Replace text with icons on small screens */
+  nav ul {
+    gap: 1.2rem;
+  }
+
+  /* Replace text with icons */
   nav a {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* smaller icons for mobile */
+    color: #fff;
+    position: relative;
+  }
+
+  /* Hide text labels */
+  nav a::before {
+    display: inline-block;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0;
+  }
+
+  /* Assign icons to each link */
+  nav a[href="#hero"]::before { content: "\f015"; }      /* Home */
+  nav a[href="#about"]::before { content: "\f007"; }     /* About */
+  nav a[href="#projects"]::before { content: "\f542"; }  /* Projects */
+  nav a[href="#contact"]::before { content: "\f0e0"; }   /* Contact */
+
+  /* Hide actual text */
+  nav a {
+    font-size: 1.6rem;
+  }
+  nav a span,
+  nav a[href="#hero"],
+  nav a[href="#about"],
+  nav a[href="#projects"],
+  nav a[href="#contact"] {
+    font-size: 0; /* hide text visually */
+  }
+
+  /* Tooltips still appear */
+  nav a::after {
+    bottom: -2rem;
+    opacity: 0;
+    font-size: 0.75rem;
+  }
+
+  nav a:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1.2rem; /* slightly smaller icons for very small screens */
   }
 
   nav a::after {
     bottom: -1.8rem;
   }
-
-  nav a[href="#hero"]::before { content: "\f015"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
-  nav a[href="#about"]::before { content: "\f007"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
-  nav a[href="#projects"]::before { content: "\f542"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
-  nav a[href="#contact"]::before { content: "\f0e0"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
-
-  /* Hide text labels */
-  nav a {
-    font-size: 1.6rem;
-  }
-  nav a span {
-    display: none;
-  }
 }
+
 
 @media (max-width: 480px) {
   .hero-name {
