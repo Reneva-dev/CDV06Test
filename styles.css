@@ -104,10 +104,9 @@ nav a:hover::after {
 
 /* HERO ICON LINKS */
 .hero-links {
-  display: flex;
-  gap: 3rem;
-  margin-top: 1rem;
+  display: none !important;
 }
+
 
 .hero-links a {
   color: #fff;
