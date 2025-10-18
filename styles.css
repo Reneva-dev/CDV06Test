@@ -15,6 +15,10 @@ body {
   color: #222;
   background: #fafafa;
   text-align: center;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* NAVBAR */
@@ -83,6 +87,7 @@ nav a:hover::after {
 /* HERO SECTION */
 #hero {
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,37 +112,21 @@ nav a:hover::after {
   display: none !important;
 }
 
-
-.hero-links a {
-  color: #fff;
-  font-size: 3rem;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.hero-links a:nth-child(1) { color: #4ecdc4; }
-.hero-links a:nth-child(2) { color: #ff6b6b; }
-.hero-links a:nth-child(3) { color: #ffd93d; }
-
-.hero-links a:hover {
-  transform: scale(1.25);
-  text-shadow: 0 0 20px currentColor;
-}
-
 /* SECTIONS */
 .section {
+  width: 100%;
   max-width: 900px;
-  margin: 8rem auto;
+  margin: 6rem auto;
   padding: 4rem 1rem;
-  min-height: 90vh;
   text-align: center;
+  min-height: auto;
 }
 
 /* ABOUT SECTION */
-/* ABOUT SECTION */
 #about.section {
-  margin-top: 4rem;       /* reduced top spacing */
-  margin-bottom: 1.5rem;  /* smaller bottom spacing to close the gap */
-  padding-bottom: 2rem;   /* reduced internal space */
+  margin-top: 4rem;
+  margin-bottom: 2rem; /* reduced bottom space */
+  padding-bottom: 1rem; /* tightened layout */
 }
 
 .about-container {
@@ -188,9 +177,11 @@ nav a:hover::after {
   margin-top: 1rem;
 }
 
-
-
 /* PROJECTS */
+#projects.section {
+  margin-top: 1rem; /* closes the large gap */
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -224,18 +215,14 @@ nav a:hover::after {
   align-items: center;
   text-align: center;
 
-  /* Subtle gradient glow (like hero section) */
   background: linear-gradient(
     135deg,
     rgba(102, 126, 234, 0.2),
     rgba(118, 75, 162, 0.2)
   );
 
-  /* Glow and depth */
   box-shadow: 0 0 40px rgba(118, 75, 162, 0.15);
   border-radius: 20px;
-
-  /* Soft glassy backdrop */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -293,7 +280,6 @@ nav a:hover::after {
   text-decoration: underline;
 }
 
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -302,9 +288,10 @@ footer {
   color: #fff;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+  width: 100%;
 }
 
-/* --- RESPONSIVENESS --- */
+/* RESPONSIVENESS */
 
 /* Tablets & Phones */
 @media (max-width: 768px) {
@@ -353,62 +340,3 @@ footer {
     letter-spacing: 2px;
   }
 }
-
-/* TIGHTER SPACING BETWEEN ABOUT & PROJECTS ON LARGER SCREENS */
-@media (min-width: 769px) {
-  #about.section {
-    margin-top: 3rem;        /* smaller gap above */
-    margin-bottom: 0rem;     /* remove excess gap below */
-    padding-bottom: 2rem;    /* gentle breathing room */
-  }
-}
-
-
-/* === GLOBAL ALIGNMENT FIXES === */
-
-/* Center everything globally */
-body {
-  overflow-x: hidden; /* prevents horizontal scrolling */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Ensure sections are centered properly */
-.section {
-  width: 100%;
-  max-width: 900px;
-  margin: 6rem auto;
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-/* Hero Section fix */
-#hero {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Contact Section fix */
-.contact-section {
-  width: 100%;
-  margin: 0 auto;
-  padding: 6rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Prevent any child elements from overflowing */
-* {
-  max-width: 100%;
-}
-
