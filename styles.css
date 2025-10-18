@@ -262,7 +262,7 @@ footer {
 }
 
 /* RESPONSIVENESS */
-/* --- RESPONSIVE NAVBAR --- */
+/* --- Responsive Navbar for Tablets & Phones --- */
 @media (max-width: 768px) {
   nav {
     justify-content: center;
@@ -270,65 +270,36 @@ footer {
   }
 
   nav ul {
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
-  /* Replace text with icons */
   nav a {
-    font-size: 1.4rem; /* smaller icons for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
-    position: relative;
+    font-size: 1.6rem; /* icon size */
   }
 
-  /* Hide text labels */
-  nav a::before {
-    display: inline-block;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 0;
+  nav a i {
+    font-size: 1.8rem; /* make icon prominent */
+    margin-bottom: 0.2rem;
   }
 
-  /* Assign icons to each link */
-  nav a[href="#hero"]::before { content: "\f015"; }      /* Home */
-  nav a[href="#about"]::before { content: "\f007"; }     /* About */
-  nav a[href="#projects"]::before { content: "\f542"; }  /* Projects */
-  nav a[href="#contact"]::before { content: "\f0e0"; }   /* Contact */
-
-  /* Hide actual text */
-  nav a {
-    font-size: 1.6rem;
-  }
-  nav a span,
-  nav a[href="#hero"],
-  nav a[href="#about"],
-  nav a[href="#projects"],
-  nav a[href="#contact"] {
-    font-size: 0; /* hide text visually */
-  }
-
-  /* Tooltips still appear */
-  nav a::after {
-    bottom: -2rem;
-    opacity: 0;
-    font-size: 0.75rem;
-  }
-
-  nav a:hover::after {
-    opacity: 1;
+  /* Hide text */
+  nav a span {
+    display: none;
   }
 }
 
+/* Even smaller phones */
 @media (max-width: 480px) {
   nav ul {
     gap: 1rem;
   }
 
-  nav a {
-    font-size: 1.2rem; /* slightly smaller icons for very small screens */
-  }
-
-  nav a::after {
-    bottom: -1.8rem;
+  nav a i {
+    font-size: 1.5rem;
   }
 }
 
