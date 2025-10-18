@@ -197,11 +197,31 @@ nav a:hover::after {
   border-left-color: #764ba2;
 }
 
-/* CONTACT SECTION */
+/* CONTACT SECTION — with translucent glow and frosted card */
 .contact-section {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  width: 100%;
+  margin: 0 auto;
   padding: 6rem 1rem;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Subtle gradient glow (like hero section) */
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.2),
+    rgba(118, 75, 162, 0.2)
+  );
+
+  /* Glow and depth */
+  box-shadow: 0 0 40px rgba(118, 75, 162, 0.15);
+  border-radius: 20px;
+
+  /* Soft glassy backdrop */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .contact-container {
@@ -212,22 +232,26 @@ nav a:hover::after {
 
 .contact-container p {
   font-size: 1rem;
-  color: #555;
+  color: #333;
   margin-bottom: 2.5rem;
   line-height: 1.7;
 }
 
+/* Frosted glass card inside */
 .contact-card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
   padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
 .contact-list {
@@ -252,6 +276,7 @@ nav a:hover::after {
   color: #764ba2;
   text-decoration: underline;
 }
+
 
 /* FOOTER */
 footer {
