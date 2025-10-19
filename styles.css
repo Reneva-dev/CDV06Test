@@ -351,6 +351,20 @@ nav a:hover::after {
                0 0 25px rgba(118, 75, 162, 0.3);
 }
 
+/* SECTION HEADINGS — unified styling for About & Projects */
+#about h2,
+#projects h2 {
+  font-size: 2.8rem; /* make headings larger */
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #333; /* dark text for readability on light background */
+  text-transform: uppercase;
+
+  /* subtle shadow for a bit of depth */
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
 
 /* FOOTER */
 footer {
