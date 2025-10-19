@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 html {
@@ -53,15 +52,26 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
   position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ICONS ALWAYS VISIBLE, TEXT APPEARS ON HOVER (DESKTOP) */
+nav a span {
+  display: none;
 }
 
 nav a i {
   font-size: 1.6rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover text reveal */
+nav a:hover i {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* Tooltip for hover text on desktop */
 nav a::after {
   content: attr(data-label);
   position: absolute;
@@ -83,11 +93,6 @@ nav a:hover::after {
   opacity: 1;
 }
 
-nav a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-}
-
 /* HERO SECTION */
 #hero {
   height: 100vh;
@@ -101,7 +106,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* HERO NAME WITH SOFT GLOW REVEAL */
+/* HERO NAME WITH SOFT GLOW ANIMATION */
 .hero-name {
   font-family: 'Playfair Display', serif;
   font-size: 7rem;
@@ -110,10 +115,9 @@ nav a:hover {
   margin-bottom: 3.5rem;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.25);
   opacity: 0;
-  animation: glowReveal 1.5s forwards;
+  animation: glowReveal 1.8s forwards;
 }
 
 @keyframes glowReveal {
@@ -136,7 +140,7 @@ nav a:hover {
   text-shadow: 0 6px 30px rgba(118, 75, 162, 0.6);
 }
 
-/* HERO ICON LINKS (hidden) */
+/* HERO ICON LINKS (HIDDEN) */
 .hero-links {
   display: none !important;
 }
@@ -148,7 +152,6 @@ nav a:hover {
   margin: 6rem auto;
   padding: 4rem 1rem;
   text-align: center;
-  min-height: auto;
 }
 
 /* ABOUT SECTION */
@@ -163,24 +166,16 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   gap: 1.2rem;
-  margin: 0 auto;
   max-width: 800px;
-}
-
-.about-text {
-  line-height: 1.8;
-  color: #333;
+  margin: 0 auto;
   text-align: center;
 }
 
 .about-text p {
   margin-bottom: 1rem;
-}
-
-.skills {
-  margin-top: 1rem;
+  line-height: 1.8;
+  color: #333;
 }
 
 .skills span {
@@ -191,7 +186,7 @@ nav a:hover {
   margin: 0.3rem;
   border-radius: 1rem;
   font-size: 0.9rem;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .skills span:hover {
@@ -199,10 +194,6 @@ nav a:hover {
 }
 
 /* PROJECTS */
-#projects.section {
-  margin-top: 1rem;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -214,18 +205,18 @@ nav a:hover {
   background: #fff;
   padding: 3rem 2.5rem;
   border-radius: 20px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-left: 6px solid #667eea;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   border-left-color: #764ba2;
 }
 
-/* CONTACT SECTION — gradient like landing page with frosted glass */
+/* CONTACT SECTION - MATCH HERO GRADIENT */
 .contact-section {
   width: 100%;
   margin: 0 auto;
@@ -235,28 +226,21 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3));
-  box-shadow: 0 0 40px rgba(118, 75, 162, 0.15);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 0 40px rgba(118,75,162,0.15);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.contact-container {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .contact-container p {
   font-size: 1rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 2.5rem;
-  line-height: 1.7;
 }
 
 .contact-card {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.2);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
@@ -271,18 +255,12 @@ nav a:hover {
   box-shadow: 0 10px 35px rgba(0,0,0,0.15);
 }
 
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .contact-list li {
   margin-bottom: 1.2rem;
 }
 
 .contact-list a {
-  color: #667eea;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
@@ -290,7 +268,7 @@ nav a:hover {
 }
 
 .contact-list a:hover {
-  color: #764ba2;
+  color: #ffd700;
   text-decoration: underline;
 }
 
@@ -309,32 +287,8 @@ footer {
 
 /* Tablets & Phones */
 @media (max-width: 768px) {
-  nav {
-    justify-content: center;
-    padding: 0.8rem 1rem;
-  }
-
-  nav ul {
-    gap: 1.5rem;
-  }
-
-  nav a {
-    font-size: 1.8rem;
-  }
-
-  nav a span {
-    display: none;
-  }
-
   nav a i {
-    display: inline-block;
     font-size: 1.8rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  nav a:hover i {
-    transform: scale(1.2);
-    color: #ffd700;
   }
 }
 
@@ -353,20 +307,12 @@ footer {
     letter-spacing: 2px;
   }
 
-  /* Make contact section smaller on tiny screens */
+  /* Reduce contact section height on tiny screens */
   .contact-section {
     padding: 4rem 1rem;
   }
 }
 
-/* Tighten About & Projects spacing on large screens */
-@media (min-width: 769px) {
-  #about.section {
-    margin-top: 3rem;
-    margin-bottom: 0rem;
-    padding-bottom: 2rem;
-  }
-}
 
 
 
