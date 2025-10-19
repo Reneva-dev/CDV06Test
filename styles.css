@@ -432,40 +432,58 @@ footer {
 }
 
 /* --- Extra Small Phones (320px and below) --- */
+/* --- Extra Small Phones (max-width: 360px) --- */
 @media (max-width: 360px) {
 
-  /* Prevent horizontal scroll on ultra-small screens */
   html, body {
     width: 100%;
     overflow-x: hidden;
   }
 
-  /* Fix potential grid overflow in projects */
+  /* Keep single-column layout */
   .project-grid {
-    grid-template-columns: 1fr; /* force single column */
+    grid-template-columns: 1fr;
     padding: 0 0.5rem;
     gap: 1.5rem;
   }
 
-  /* Make sure project cards fit snugly */
   .project-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
 
-  /* Adjust contact section padding */
+  /* ✨ Compact contact section */
   .contact-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;         /* reduced overall height */
+    border-radius: 12px;
   }
 
-  /* Slightly shrink large headings */
-  h2, .hero-name {
-    font-size: clamp(2rem, 6vw, 3rem);
+  .contact-container p {
+    font-size: 0.9rem;          /* smaller text */
+    margin-bottom: 1.5rem;
   }
 
-  /* Reduce margin gaps to fit tighter screens */
+  .contact-card {
+    padding: 1.5rem 1rem;       /* smaller internal padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-list a {
+    font-size: 1rem;            /* slightly smaller links */
+  }
+
+  /* Headings resize proportionally */
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+  }
+
   .section {
-    margin: 4rem auto;
-    padding: 2rem 1rem;
+    margin: 3rem auto;
+    padding: 2rem 0.5rem;
   }
 }
 
