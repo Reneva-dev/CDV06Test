@@ -432,8 +432,7 @@ footer {
 }
 
 /* --- Extra Small Phones (320px and below) --- */
-/* --- Extra Small Phones (max-width: 360px) --- */
-@media (max-width: 360px) {
+@media (max-width: 320px) {
 
   html, body {
     width: 100%;
