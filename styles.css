@@ -430,3 +430,42 @@ footer {
     letter-spacing: 2px;
   }
 }
+
+/* --- Extra Small Phones (320px and below) --- */
+@media (max-width: 360px) {
+
+  /* Prevent horizontal scroll on ultra-small screens */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Fix potential grid overflow in projects */
+  .project-grid {
+    grid-template-columns: 1fr; /* force single column */
+    padding: 0 0.5rem;
+    gap: 1.5rem;
+  }
+
+  /* Make sure project cards fit snugly */
+  .project-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Adjust contact section padding */
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+
+  /* Slightly shrink large headings */
+  h2, .hero-name {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  /* Reduce margin gaps to fit tighter screens */
+  .section {
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+  }
+}
+
