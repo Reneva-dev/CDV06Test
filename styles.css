@@ -206,8 +206,8 @@ nav a:hover {
 .about-text h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: black;
+  text-shadow: 0 2px 8px rgba(103, 13, 106, 0.3);
 }
 
 .skills {
@@ -236,8 +236,8 @@ nav a:hover {
 #projects.section h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: black;
+  text-shadow: 0 2px 8px rgba(126, 14, 128, 0.3);
 }
 
 .project-grid {
