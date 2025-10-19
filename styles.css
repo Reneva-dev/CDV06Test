@@ -1,4 +1,6 @@
-/* GLOBAL RESETS */
+/* =========================
+   GLOBAL RESETS
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +23,9 @@ body {
   align-items: center;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 header {
   position: fixed;
   top: 0;
@@ -52,30 +56,29 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  position: relative;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* ICONS ALWAYS VISIBLE, TEXT APPEARS ON HOVER (DESKTOP) */
-nav a span {
-  display: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav a i {
   font-size: 1.6rem;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover i {
-  transform: scale(1.2);
-  color: #ffd700;
+nav a span {
+  display: none; /* hide text, show only on hover */
 }
 
-/* Tooltip for hover text on desktop */
+nav a:hover::after {
+  opacity: 1;
+}
+
 nav a::after {
   content: attr(data-label);
   position: absolute;
-  bottom: -2rem;
+  bottom: -1.8rem;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
@@ -89,10 +92,27 @@ nav a::after {
   transition: opacity 0.3s ease;
 }
 
-nav a:hover::after {
-  opacity: 1;
+nav a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 }
 
+/* =========================
+   HERO SECTION
+========================= */
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+}
+
+/* HERO NAME WITH SOFT GLOW ANIMATION */
 .hero-name {
   font-family: 'Playfair Display', serif;
   font-size: 7rem;
@@ -102,12 +122,10 @@ nav a:hover::after {
   text-transform: uppercase;
   color: #fff;
   text-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  
   opacity: 0;
   animation: glowReveal 1.8s forwards;
-  
-  position: relative;   /* required for pseudo-element */
-  overflow: hidden;     /* hide shine outside text */
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-name::after {
@@ -117,23 +135,16 @@ nav a:hover::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
   animation: shine 2s ease-out forwards 0.5s;
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 @keyframes glowReveal {
-  0% {
-    opacity: 0;
-    text-shadow: 0 0 0px rgba(255,255,255,0);
-  }
-  50% {
-    opacity: 1;
-    text-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
-  100% {
-    opacity: 1;
-    text-shadow: 0 0 15px rgba(255,255,255,0.2);
-  }
+  0% { opacity: 0; text-shadow: 0 0 0px rgba(255,255,255,0); }
+  50% { opacity: 1; text-shadow: 0 0 20px rgba(255,255,255,0.3); }
+  100% { opacity: 1; text-shadow: 0 0 15px rgba(255,255,255,0.2); }
 }
 
 @keyframes shine {
@@ -145,22 +156,26 @@ nav a:hover::after {
   text-shadow: 0 6px 30px rgba(118, 75, 162, 0.6);
 }
 
-
-/* HERO ICON LINKS (HIDDEN) */
+/* HERO LINKS (HIDDEN) */
 .hero-links {
   display: none !important;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 .section {
   width: 100%;
   max-width: 900px;
   margin: 6rem auto;
   padding: 4rem 1rem;
   text-align: center;
+  min-height: auto;
 }
 
-/* ABOUT SECTION */
+/* =========================
+   ABOUT SECTION
+========================= */
 #about.section {
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -172,34 +187,59 @@ nav a:hover::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 1.2rem;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
+}
+
+.about-text {
+  line-height: 1.8;
+  color: #333;
   text-align: center;
 }
 
 .about-text p {
   margin-bottom: 1rem;
-  line-height: 1.8;
-  color: #333;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.skills {
+  margin-top: 1rem;
 }
 
 .skills span {
   display: inline-block;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
   padding: 0.4rem 0.8rem;
   margin: 0.3rem;
   border-radius: 1rem;
   font-size: 0.9rem;
-  transition: transform 0.3s ease;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .skills span:hover {
   transform: scale(1.1);
 }
 
-/* PROJECTS */
+/* =========================
+   PROJECTS
+========================= */
+#projects.section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -222,27 +262,43 @@ nav a:hover::after {
   border-left-color: #764ba2;
 }
 
-/* CONTACT SECTION - MATCH HERO GRADIENT */
+/* =========================
+   CONTACT SECTION
+========================= */
 .contact-section {
   width: 100%;
   margin: 0 auto;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem; /* reduced for smaller phones */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  box-shadow: 0 0 40px rgba(118,75,162,0.15);
+  background: linear-gradient(135deg, #667eea, #764ba2); /* match hero */
+  box-shadow: 0 0 40px rgba(118, 75, 162, 0.15);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-container p {
   font-size: 1rem;
   color: #fff;
   margin-bottom: 2.5rem;
+  line-height: 1.7;
 }
 
 .contact-card {
@@ -259,6 +315,12 @@ nav a:hover::after {
 .contact-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .contact-list li {
@@ -278,7 +340,9 @@ nav a:hover::after {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 1rem;
@@ -289,89 +353,24 @@ footer {
   width: 100%;
 }
 
-/* RESPONSIVENESS */
-
-/* Tablets & Phones */
+/* =========================
+   RESPONSIVENESS
+========================= */
 @media (max-width: 768px) {
-  nav a i {
-    font-size: 1.8rem;
-  }
+  nav ul { gap: 1.5rem; }
+  nav a i { font-size: 1.8rem; }
 }
 
-/* Small Phones */
 @media (max-width: 480px) {
-  nav ul {
-    gap: 1rem;
-  }
-
-  nav a i {
-    font-size: 1.6rem;
-  }
-
-  .hero-name {
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-  }
-
-  /* Reduce contact section height on tiny screens */
-  .contact-section {
-    padding: 4rem 1rem;
-  }
+  nav ul { gap: 1rem; }
+  nav a i { font-size: 1.6rem; }
+  .hero-name { font-size: 3.5rem; letter-spacing: 2px; }
+  .contact-section { padding: 3rem 1rem; }
 }
 
-/* --- Extra Small Phones (max-width: 360px) --- */
 @media (max-width: 320px) {
-
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Keep single-column layout */
-  .project-grid {
-    grid-template-columns: 1fr;
-    padding: 0 0.5rem;
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    padding: 1.5rem 1rem;
-  }
-
-  /* ✨ Compact contact section */
-  .contact-section {
-    padding: 3rem 1rem;         /* reduced overall height */
-    border-radius: 12px;
-  }
-
-  .contact-container p {
-    font-size: 0.9rem;          /* smaller text */
-    margin-bottom: 1.5rem;
-  }
-
-  .contact-card {
-    padding: 1.5rem 1rem;       /* smaller internal padding */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  .contact-list a {
-    font-size: 1rem;            /* slightly smaller links */
-  }
-
-  /* Headings resize proportionally */
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-name {
-    font-size: 2.8rem;
-    letter-spacing: 1px;
-  }
-
-  .section {
-    margin: 3rem auto;
-    padding: 2rem 0.5rem;
-  }
+  .hero-name { font-size: 3rem; letter-spacing: 1.5px; }
+  .contact-section { padding: 2rem 0.5rem; }
 }
 
 
