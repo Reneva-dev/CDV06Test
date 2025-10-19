@@ -1,53 +1,15 @@
 ✨ Reneva Newman | Portfolio
 
-Welcome to my personal developer portfolio. This site showcases my skills, projects, and background as I transition from education into web development.
+Welcome to my personal developer portfolio. This site showcases my skills, projects, and background as I transition from education into web development.  
 
-📖 Table of Contents
 
-About Me
 
-💻 Skills
-
-📝 Projects
-
-📬 Contact
-
-🖥️ How to View Locally
-
-📄 License
-
-🙋 About Me
-
-Hi, I'm Reneva Newman — a passionate junior web developer with a strong foundation in education and creativity.
-
-For over a decade, I worked in primary school education, developing a deep understanding of how people learn and how technology can empower that process.
-
-I’m now channeling that experience into the EdTech industry, designing and building intuitive, accessible digital tools that make learning more engaging and inclusive.
-
-“Blending education and technology to create meaningful learning experiences.”
-
-💻 Skills
-
-I enjoy creating clean, functional web experiences using:
-
-HTML
-
-CSS
-
-JavaScript
-
-Git
-
-Educational Design
-
-📝 Projects
-📂 Portfolio Website
+### Project Overview
 
 Built from scratch to showcase my skills, background, and projects.
 
 Designed to be minimalistic and responsive, using semantic HTML and modern CSS layout techniques like Flexbox and Grid.
 
-View on GitHub: https://github.com/Reneva-dev/RENNEW25098_GroupA_Reneva_Newman_SDFPP
 
 📊 Kanban Productivity App
 
@@ -56,6 +18,7 @@ Conceptual dashboard for teachers to record and visualize student progress over 
 Built using HTML, CSS, and light JavaScript interactions.
 
 View on GitHub: https://github.com/Reneva-dev/RENNEW25098_PTO2502_GroupA_Reneva_Newman_JSLPP
+
 
 📬 Contact
 
@@ -66,6 +29,7 @@ I’d love to connect! Whether you’d like to collaborate, discuss EdTech innov
 💻 GitHub: https://github.com/Reneva-dev
 
 🌐 LinkedIn: https://www.linkedin.com/in/reneva-newman/
+
 
 🖥️ How to View Locally
 
@@ -81,6 +45,3 @@ Open index.html in your web browser.
 
 On most systems, you can double-click the file, or right-click → Open With → Browser.
 
-📄 License
-
-This project is licensed under the MIT License.
